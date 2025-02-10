@@ -31,7 +31,9 @@ jobs:
       env:
           id: ${{ secrets.DEV_USER_NAME }}
           pass: ${{ secrets.DEV_PASS }}
-      run: mvn clean install -Dbrowser=chrome -Dusername=id -Dpassword=pass --file pom.xml
+      run: |
+          echo "$id
+          mvn clean install -Dbrowser=chrome -Dusername=id -Dpassword=pass --file pom.xml
       #mvn -B package --file pom.xml
 
     
