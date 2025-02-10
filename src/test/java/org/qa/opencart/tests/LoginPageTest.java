@@ -32,7 +32,7 @@ public class LoginPageTest extends BaseTest{
 		 * If user wants to pass username & password through maven command
 		 */
 		
-		lp.doLogin(System.getProperty("username"), System.getProperty("password"));
+		lp.doLogin(System.getProperty("DEV_USER_NAME"), System.getProperty("DEV_PASS"));
 	}
 
 
