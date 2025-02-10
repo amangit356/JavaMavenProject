@@ -18,7 +18,7 @@ public class LoginPageTest extends BaseTest{
 	@Test
 	public void verifyLoginPageUrl() {
 		
-		Assert.assertEquals(lp.getLoginPageUrl(), "https://naveenautomationlabs.com/opencart/index.php?route=account/login");
+		Assert.assertEquals(lp.getLoginPageUrl(), "https://naveenautomationlabs.com/opencart/index.php?route=account/loginss");
 	}
 	
 	@Test(priority = 2)
