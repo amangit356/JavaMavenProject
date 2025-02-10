@@ -32,7 +32,7 @@ jobs:
           id: ${{ secrets.DEV_USER_NAME }}
           pass: ${{ secrets.DEV_PASS }}
       run: |
-          echo : "$id"
+          echo : $id
           mvn clean install -Dbrowser=chrome -Dusername=id -Dpassword=pass --file pom.xml
       #mvn -B package --file pom.xml
 
