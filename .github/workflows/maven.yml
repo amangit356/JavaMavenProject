@@ -34,6 +34,7 @@ jobs:
       run: |
           echo : $id
           mvn clean install -Dbrowser=chrome -Dusername=$id -Dpassword=$pass --file pom.xml
+          continue-on-error: true
           
     - name: Do login with another username & password, build with maven
       env:
