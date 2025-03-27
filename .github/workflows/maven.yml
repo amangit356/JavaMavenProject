@@ -32,8 +32,8 @@ jobs:
           id: ${{ secrets.DEV_USER_NAME }}
           pass: ${{ secrets.DEV_PASS }}
 
-          ID: ${{ secrets.DEV_USER_NAME }}
-          PASS: ${{ secrets.DEV_PASS }}
+          UserID: ${{ secrets.DEV_USER_NAME }}
+          UserPASS: ${{ secrets.DEV_PASS }}
       run: |
           echo : $id
           mvn clean install -Dbrowser=chrome -Dusername=$id -Dpassword=$pass --file pom.xml || true
@@ -42,7 +42,7 @@ jobs:
     - name: Do login with another username & password, build with maven   
       run: |
           echo : $id
-          mvn clean install -Dbrowser=chrome -Dusername=$ID -Dpassword=$PASS --file pom.xml
+          mvn clean install -Dbrowser=chrome -Dusername=$UserID -Dpassword=$UserPASS --file pom.xml
       #mvn -B package --file pom.xml
 
     
