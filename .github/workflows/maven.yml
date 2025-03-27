@@ -34,6 +34,14 @@ jobs:
       run: |
           echo : $id
           mvn clean install -Dbrowser=chrome -Dusername=id -Dpassword=pass --file pom.xml
+          
+    - name: Do login with another username & password, build with maven
+      env:
+          id: ${{ secrets.DEV_USER_NAME }}
+          pass: ${{ secrets.DEV_PASS }}
+      run: |
+          echo : $id
+          mvn clean install -Dbrowser=chrome -Dusername=id -Dpassword=pass --file pom.xml
       #mvn -B package --file pom.xml
 
     
