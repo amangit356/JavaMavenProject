@@ -31,18 +31,18 @@ jobs:
       env:
           id: ${{ secrets.DEV_USER_NAME }}
           pass: ${{ secrets.DEV_PASS }}
+
+          ID: ${{ secrets.DEV_USER_NAME }}
+          PASS: ${{ secrets.DEV_PASS }}
       run: |
           echo : $id
-          mvn clean install -Dbrowser=chrome -Dusername=$id -Dpassword=$pass --file pom.xml
-          continue-on-error: true
+          mvn clean install -Dbrowser=chrome -Dusername=$id -Dpassword=$pass --file pom.xml || true
+          #continue-on-error: true
           
-    - name: Do login with another username & password, build with maven
-      env:
-          id: ${{ secrets.DEV_USER_NAME }}
-          pass: ${{ secrets.DEV_PASS }}
+    - name: Do login with another username & password, build with maven   
       run: |
           echo : $id
-          mvn clean install -Dbrowser=chrome -Dusername=$id -Dpassword=$pass --file pom.xml
+          mvn clean install -Dbrowser=chrome -Dusername=$ID -Dpassword=$PASS --file pom.xml
       #mvn -B package --file pom.xml
 
     
